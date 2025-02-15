@@ -1,6 +1,23 @@
 # Chain of Thought Prompting with Claude
 
-Chain of Thought (CoT) prompting is a powerful technique that improves Claude's performance on complex tasks by encouraging step-by-step reasoning. This guide covers when and how to use CoT effectively.
+Chain of Thought (CoT) prompting is a powerful technique that improves Claude's performance on complex tasks by encouraging step-by-step reasoning. This guide covers implementation using our prompt generator system.
+
+## Quick Start
+
+```bash
+# Basic CoT prompt
+/prompt solve problem \
+  --template chain_of_thought \
+  --req "Show reasoning" \
+  --req "Include verification"
+
+# Advanced CoT with branching
+/prompt analyze problem \
+  --template cot_advanced \
+  --var PATHS="approach1,approach2" \
+  --req "Compare approaches" \
+  --req "Justify selection"
+```
 
 ## When to Use Chain of Thought
 
@@ -19,86 +36,180 @@ Chain of Thought (CoT) prompting is a powerful technique that improves Claude's 
 3. Direct classification tasks
 4. When immediate responses are required (CoT adds some latency)
 
-## Implementation Techniques
+## Implementation with Prompt Generator
 
-### 1. Explicit Step Request
-```xml
+### 1. Basic Chain of Thought
+```bash
+# Template selection
+/prompt solve problem \
+  --template chain_of_thought \
+  --steps "understand,analyze,solve,verify"
+
+# Generated template
 <task>
-Analyze this code for potential security vulnerabilities.
+[Problem description]
 </task>
 
 <thinking_process>
-Please follow these steps in your analysis:
-1. First, identify all input points and data flows
-2. Then, examine each input point for validation
-3. Next, analyze data handling and storage
-4. Finally, evaluate authentication and authorization
+1. Understanding Phase
+   - What are we solving?
+   - What information do we have?
+   - What are our goals?
+
+2. Analysis Phase
+   - Break down components
+   - Identify relationships
+   - Note constraints
+
+3. Solution Phase
+   - Develop approach
+   - Apply method
+   - Document steps
+
+4. Verification Phase
+   - Check results
+   - Test edge cases
+   - Validate solution
 </thinking_process>
-
-<output_format>
-For each step, explain your reasoning before moving to conclusions.
-</output_format>
 ```
 
-### 2. Let's Solve This Step by Step
-```xml
-<prompt>
-Let's solve this problem step by step:
+### 2. Interactive Chain of Thought
+```bash
+# Interactive problem solving
+/prompt --interactive solve \
+  --template cot_interactive \
+  --var MODE="detailed"
 
-1. First, let's understand what we're trying to achieve
-2. Then, we'll identify the key components
-3. Next, we'll analyze each component
-4. Finally, we'll synthesize our findings
+# Generated session
+<session>
+1. Problem Definition
+   [System prompts for problem details]
 
-Take your time with each step and explain your thinking.
-</prompt>
+2. Approach Selection
+   [System offers solution strategies]
+
+3. Step-by-Step Solution
+   [System guides through each step]
+
+4. Verification Process
+   [System helps verify solution]
+</session>
 ```
 
-### 3. Self-Questioning Approach
-```xml
-<task>
-As you analyze this, ask yourself:
-1. What are the key elements here?
-2. How do these elements interact?
-3. What potential issues might arise?
-4. What evidence supports my conclusions?
+### 3. Self-Questioning Framework
+```bash
+# Generate self-questioning template
+/prompt analyze problem \
+  --template cot_questions \
+  --var DEPTH="detailed" \
+  --req "Include reasoning"
 
-Walk through your answers to each question.
-</task>
+# Generated framework
+<analysis_framework>
+1. Initial Questions
+   - What is the core problem?
+   - What are our constraints?
+   - What does success look like?
+
+2. Deep Analysis
+   - How do components interact?
+   - What are potential issues?
+   - Where are the edge cases?
+
+3. Solution Development
+   - What approaches are possible?
+   - Which is most suitable?
+   - How can we verify?
+
+4. Validation Questions
+   - Have we met all requirements?
+   - What could go wrong?
+   - How can we improve?
+</analysis_framework>
 ```
 
-## Advanced CoT Techniques
+## Advanced Techniques
 
-### 1. Branching Thought Chains
-```xml
-<task>
-Consider multiple paths of analysis:
+### 1. Branching Analysis
+```bash
+# Generate branching analysis
+/prompt analyze options \
+  --template cot_branching \
+  --var BRANCHES="3" \
+  --req "Compare approaches" \
+  --req "Justify selection"
 
-Path A: [First approach]
-- What if we start with...
-- Then consider...
-- Leading to...
+# Generated structure
+<branching_analysis>
+1. Approach A: [Performance Focus]
+   - Initial state
+   - Optimization steps
+   - Performance metrics
+   - Trade-offs
 
-Path B: [Alternative approach]
-- Or we could begin with...
-- Following with...
-- Resulting in...
+2. Approach B: [Security Focus]
+   - Threat model
+   - Security measures
+   - Risk assessment
+   - Trade-offs
 
-Analyze both paths and explain which is more suitable.
-</task>
+3. Approach C: [Hybrid]
+   - Combined strategy
+   - Integration points
+   - Balance metrics
+   - Trade-offs
+
+4. Comparison
+   - Criteria matrix
+   - Scoring system
+   - Final selection
+   - Implementation plan
+</branching_analysis>
 ```
 
-### 2. Recursive Thinking
-```xml
-<task>
-For each conclusion you reach:
-1. Question your assumptions
-2. Consider counter-arguments
-3. Identify potential edge cases
-4. Refine your reasoning
+### 2. Recursive Analysis
+```bash
+# Generate recursive analysis
+/prompt analyze deep \
+  --template cot_recursive \
+  --var DEPTH="3" \
+  --req "Show all levels"
 
-Document this recursive analysis process.
-</task>
+# Generated framework
+<recursive_analysis>
+1. Initial Analysis
+   - Base assumptions
+   - First conclusions
+   - Identified gaps
+
+2. Level 1 Recursion
+   - Question assumptions
+   - Find counter-arguments
+   - Refine thinking
+
+3. Level 2 Recursion
+   - Challenge refinements
+   - Explore edge cases
+   - Strengthen logic
+
+4. Level 3 Recursion
+   - Final validation
+   - Confidence check
+   - Documentation
+</recursive_analysis>
+```
+
+### 3. Quality Assurance
+```bash
+# Validate CoT process
+/prompt verify reasoning \
+  --template cot_qa \
+  --checks "logic,completeness,clarity"
+
+# Monitor effectiveness
+/prompt analyze results \
+  --template cot_metrics \
+  --var METRICS="accuracy,coverage,depth"
 ```
 
 ### 3. Expert Role CoT

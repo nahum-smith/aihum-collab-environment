@@ -1,10 +1,29 @@
 # Claude Prompt Engineering Best Practices
 
-This guide summarizes key best practices for engineering effective prompts for Claude, based on Anthropic's official documentation.
+Comprehensive guide for creating effective prompts with Claude, incorporating both Anthropic's official guidelines and our prompt generator system.
 
-## Core Techniques
+## Quick Start with Prompt Generator
 
-### 1. Clarity and Directness
+```bash
+# Basic prompt generation
+/prompt [task] [requirements...]
+
+# Example: Create API documentation
+/prompt create API docs \
+  --template api_docs \
+  --req "Include endpoints" \
+  --req "Show examples"
+```
+
+## Core Techniques and Tools
+
+### 1. Template-Based Generation
+- Use pre-built templates for common tasks
+- Customize templates for specific needs
+- Leverage quality checks and validation
+- Maintain consistent structure
+
+### 2. Clarity and Directness
 - Be specific and detailed in prompts
 - Provide all necessary context upfront
 - Use clear, unambiguous language
@@ -61,44 +80,123 @@ This guide summarizes key best practices for engineering effective prompts for C
 4. Implement caching when beneficial
 
 ### Common Pitfalls to Avoid
-1. Vague or ambiguous instructions
-2. Insufficient context
-3. Inconsistent formatting
-4. Lack of error handling
-5. Overly complex single prompts
+1. **Template Misuse**
+   - Using wrong template for task
+   - Not customizing templates
+   - Ignoring validation errors
+   - Skipping quality checks
+
+2. **Prompt Structure**
+   - Vague instructions
+   - Insufficient context
+   - Inconsistent formatting
+   - Overly complex prompts
+
+3. **Workflow Issues**
+   - Not using version control
+   - Skipping documentation
+   - Ignoring best practices
+   - Poor error handling
 
 ## Best Practices by Task Type
 
 ### Analysis Tasks
-- Include specific analysis criteria
-- Break down into clear steps
-- Request structured output
-- Include validation steps
+```bash
+# Code review template
+/prompt review code \
+  --template code_review \
+  --checks "security,performance,style" \
+  --req "Detailed analysis"
+```
+- Use appropriate templates
+- Include specific criteria
+- Enable quality checks
+- Add validation steps
 
 ### Generation Tasks
-- Provide clear constraints
-- Include style guidelines
+```bash
+# Documentation generation
+/prompt create docs \
+  --template technical \
+  --var STYLE="detailed" \
+  --format markdown
+```
+- Use task-specific templates
+- Set style variables
 - Specify output format
-- Use examples for tone/style
+- Include examples
 
 ### Interaction Tasks
-- Define conversation flow
-- Include error handling
-- Specify response formats
-- Maintain consistent role
+```bash
+# Interactive documentation
+/prompt --interactive \
+  create guide \
+  --template user_docs \
+  --chain "overview,details,examples"
+```
+- Use interactive mode
+- Chain commands
+- Handle errors
+- Maintain consistency
 
-## Evaluation and Iteration
+## Quality Assurance
 
-### Testing Prompts
-1. Use diverse test cases
-2. Validate against criteria
-3. Check edge cases
-4. Measure performance
+### Template Validation
+```bash
+# Validate template
+/prompt --validate my_template.xml
 
-### Iterative Improvement
-1. Gather performance data
-2. Identify failure points
-3. Refine prompt structure
+# Run quality checks
+/prompt --verify "security,performance" template.xml
+```
+
+### Testing
+1. **Automated Checks**
+   - Run template validation
+   - Check variable usage
+   - Verify formatting
+   - Test edge cases
+
+2. **Manual Review**
+   - Review generated content
+   - Check for consistency
+   - Validate outputs
+   - Test workflows
+
+### Continuous Improvement
+
+1. **Monitoring**
+   ```bash
+   # Enable debug mode
+   /prompt --debug create docs
+   ```
+   - Track success rates
+   - Monitor performance
+   - Log error patterns
+
+2. **Refinement**
+   - Update templates
+   - Improve validation
+   - Enhance workflows
+   - Document changes
+
+## Integration
+
+### With Development Workflow
+```bash
+# Add to CI/CD
+/prompt review code \
+  --template ci_review \
+  --checks "all"
+```
+
+### With Knowledge Base
+```bash
+# Auto-documentation
+/prompt update docs \
+  --watch "src/**/*.md" \
+  --template docs
+```
 4. Test improvements
 
 ## Resources

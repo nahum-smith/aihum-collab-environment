@@ -28,6 +28,22 @@ This system transforms technical collaboration at two fundamental levels:
 - Enables sharing across organizations
 - Independent versioning and maintenance
 
+## System Architecture
+
+```mermaid
+graph TD
+    A[User Interface] -->|Interacts with| B[Agentic IDE]
+    B -->|Utilizes| C[AI Agents]
+    C -->|Accesses| D[Knowledge Base Network]
+    D -->|Contains| E[Nested Knowledge Bases]
+    D -->|Integrates with| F[Networked Knowledge Bases]
+    E -->|Includes| G[Human-Optimized Documentation]
+    E -->|Includes| H[AI-Optimized Metadata]
+    F -->|Shares| I[Cross-Organization Knowledge]
+    G -->|Visualizes| J[Markdown with Visual Aids]
+    H -->|Structures| K[Metadata for Context]
+```
+
 ## Directory Structure
 ```
 /
@@ -46,6 +62,79 @@ This system transforms technical collaboration at two fundamental levels:
     ├── kb-flowise-integration/       # Example nested KB
     └── external/                     # Networked KBs (submodules)
 ```
+
+## Workflow Diagrams
+
+### Prompt Generation Flow
+```mermaid
+sequenceDiagram
+    User->>Cascade: /prompt command
+    Cascade->>Generator: Parse command
+    Generator->>Templates: Load template
+    Templates-->>Generator: Return template
+    Generator->>Generator: Generate prompt
+    Generator-->>Cascade: Return result
+    Cascade-->>User: Display prompt
+    
+    Note over User,Templates: Template-based generation
+```
+
+### Knowledge Base Integration
+```mermaid
+flowchart LR
+    P[Prompts] --> PG[Prompt Generator]
+    T[Templates] --> PG
+    PG --> D[Documentation]
+    CoT[Chain of Thought] --> D
+    Doc[Documentation Gen] --> D
+    D --> NK[Nested KBs]
+    D --> EK[External KBs]
+    
+    classDef generator fill:#bfb,stroke:#333,stroke-width:2px
+    classDef thought fill:#bbf,stroke:#333,stroke-width:2px
+    classDef docgen fill:#fbb,stroke:#333,stroke-width:2px
+    
+    class PG generator
+    class CoT thought
+    class Doc docgen
+```
+
+## Prompt Generator
+
+Our knowledge base includes a powerful prompt generation system that helps create consistent, high-quality prompts for AI interactions.
+
+### Quick Start
+
+1. **Using the CLI Command**
+```bash
+/prompt [task] [requirement1] [requirement2] ...
+```
+
+Example:
+```bash
+/prompt create API docs include-endpoints show-examples
+```
+
+2. **Using the Shell Script**
+```bash
+./scripts/prompt-gen.sh "Create API docs" "Include endpoints" "Show examples"
+```
+
+### Features
+- Template-based prompt generation
+- Built-in quality checks
+- Chain of thought support
+- Customizable output formats
+
+### Documentation
+Full documentation available in `/prompting/claude/prompt_generator/README.md`
+
+### Templates
+Pre-built templates for common tasks:
+- API documentation
+- Code review
+- Technical documentation
+- Chain of thought reasoning
 
 ## Network Effects
 

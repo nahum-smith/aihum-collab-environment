@@ -10,6 +10,16 @@ All notable changes to this project will be documented in this file.
   - Added prompt templates directory with base templates
   - Implemented prompt generation CLI tool
 
+```mermaid
+graph TD;
+    A[Prompt Generator System] --> B[Prompt Templates Directory];
+    A --> C[Prompt Generation CLI Tool];
+    B --> D[Base Templates];
+    C --> E[CLI Commands];
+    D --> F[General XML Templates];
+    E --> G[Prompt Generation Process];
+```
+
 ### New Files
 - `/prompting/claude/prompt_generator/`
   - `README.md` - Complete documentation for prompt generator
