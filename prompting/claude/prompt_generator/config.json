@@ -1,0 +1,23 @@
+{
+    "defaultTemplate": "general",
+    "templates": {
+        "general": "templates/general.xml",
+        "api_docs": "templates/api_docs.xml",
+        "code_review": "templates/code_review.xml",
+        "technical_docs": "templates/technical_docs.xml"
+    },
+    "outputFormat": "xml",
+    "includeExamples": true,
+    "qualityChecks": true,
+    "chainOfThought": true,
+    "commands": {
+        "prompt": {
+            "syntax": "/prompt [task] [requirement1] [requirement2] ...",
+            "description": "Generate a prompt template",
+            "examples": [
+                "/prompt create API docs include-endpoints show-examples",
+                "/prompt code review security-focus performance-check"
+            ]
+        }
+    }
+}

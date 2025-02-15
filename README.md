@@ -34,6 +34,14 @@ This system transforms technical collaboration at two fundamental levels:
 ├── README.md                         # Root documentation
 ├── scripts/                          # Utility scripts
 │   └── add_kb.sh                    # Script to add new KBs
+├── prompting/                        # Prompt engineering patterns
+│   ├── claude/                     # Claude-specific patterns
+│   │   ├── system/               # System prompts
+│   │   ├── tasks/                # Task prompts
+│   │   └── examples/             # Example prompts
+│   ├── doc_templates/               # Documentation templates
+│   ├── code_review/                # Code review patterns
+│   └── metadata_patterns/          # Metadata templates
 └── kb-network/                       # Knowledge base network
     ├── kb-flowise-integration/       # Example nested KB
     └── external/                     # Networked KBs (submodules)

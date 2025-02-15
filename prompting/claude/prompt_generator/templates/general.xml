@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- General Purpose Prompt Template -->
+<prompt_template>
+    <task_definition>
+        <name>{$TASK_NAME}</name>
+        <description>{$TASK_DESCRIPTION}</description>
+        <goals>
+            <goal>{$GOAL_1}</goal>
+            <goal>{$GOAL_2}</goal>
+            <goal>{$GOAL_3}</goal>
+        </goals>
+    </task_definition>
+
+    <system_prompt>
+        You are a {$ROLE} specializing in {$SPECIALTY}. Your task is to {$PRIMARY_TASK}.
+
+        Key responsibilities:
+        - {$RESPONSIBILITY_1}
+        - {$RESPONSIBILITY_2}
+        - {$RESPONSIBILITY_3}
+
+        Constraints:
+        - {$CONSTRAINT_1}
+        - {$CONSTRAINT_2}
+        - {$CONSTRAINT_3}
+    </system_prompt>
+
+    <input_format>
+        <structure>
+            {$INPUT_STRUCTURE}
+        </structure>
+        <example_input>
+            {$EXAMPLE_INPUT}
+        </example_input>
+    </input_format>
+
+    <output_format>
+        <structure>
+            {$OUTPUT_STRUCTURE}
+        </structure>
+        <example_output>
+            {$EXAMPLE_OUTPUT}
+        </example_output>
+    </output_format>
+
+    <chain_of_thought>
+        <steps>
+            <step>1. {$STEP_1}</step>
+            <step>2. {$STEP_2}</step>
+            <step>3. {$STEP_3}</step>
+        </steps>
+    </chain_of_thought>
+
+    <quality_checks>
+        <check>{$CHECK_1}</check>
+        <check>{$CHECK_2}</check>
+        <check>{$CHECK_3}</check>
+    </quality_checks>
+</prompt_template>
