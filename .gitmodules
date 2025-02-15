@@ -1,0 +1,3 @@
+[submodule "kb-network/external/kb-investment-environemnt"]
+	path = kb-network/external/kb-investment-environemnt
+	url = https://github.com/nahum-smith/investment-rd-environment.git
