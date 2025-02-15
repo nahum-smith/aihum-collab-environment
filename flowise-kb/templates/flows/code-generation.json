@@ -1,0 +1,92 @@
+{
+    "id": "code-generation-flow",
+    "name": "Code Generation Flow",
+    "description": "Generates code based on natural language prompts",
+    "nodes": [
+        {
+            "id": "input-node",
+            "type": "inputNode",
+            "data": {
+                "name": "User Input",
+                "fields": [
+                    {
+                        "name": "prompt",
+                        "type": "string",
+                        "description": "Natural language description of the code to generate"
+                    },
+                    {
+                        "name": "language",
+                        "type": "select",
+                        "options": ["typescript", "javascript", "python"],
+                        "default": "typescript"
+                    },
+                    {
+                        "name": "framework",
+                        "type": "select",
+                        "options": ["react", "vue", "angular", "none"],
+                        "default": "react"
+                    }
+                ]
+            }
+        },
+        {
+            "id": "prompt-builder",
+            "type": "promptTemplate",
+            "data": {
+                "template": "Generate {{language}} code for {{framework}} that accomplishes the following:\n{{prompt}}\n\nRequirements:\n1. Use modern best practices\n2. Include type definitions\n3. Add error handling\n4. Include comments\n5. Follow clean code principles"
+            }
+        },
+        {
+            "id": "llm-node",
+            "type": "openAI",
+            "data": {
+                "model": "gpt-4",
+                "temperature": 0.7,
+                "maxTokens": 2000
+            }
+        },
+        {
+            "id": "code-validator",
+            "type": "codeValidator",
+            "data": {
+                "language": "{{language}}",
+                "framework": "{{framework}}",
+                "checkSyntax": true,
+                "checkTypes": true,
+                "checkStyle": true
+            }
+        },
+        {
+            "id": "output-formatter",
+            "type": "codeFormatter",
+            "data": {
+                "style": "prettier",
+                "insertTypes": true,
+                "addComments": true
+            }
+        }
+    ],
+    "edges": [
+        {
+            "source": "input-node",
+            "target": "prompt-builder"
+        },
+        {
+            "source": "prompt-builder",
+            "target": "llm-node"
+        },
+        {
+            "source": "llm-node",
+            "target": "code-validator"
+        },
+        {
+            "source": "code-validator",
+            "target": "output-formatter"
+        }
+    ],
+    "metadata": {
+        "version": "1.0",
+        "category": "code-generation",
+        "tags": ["development", "automation"]
+    }
+}

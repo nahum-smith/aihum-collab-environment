@@ -1,0 +1,84 @@
+{
+  "version": "1.1",
+  "last_updated": "2025-02-15",
+  "node_categories": {
+    "llm_nodes": {
+      "description": "Language Model Integration Nodes",
+      "types": [
+        "OpenAI",
+        "HuggingFace",
+        "Anthropic",
+        "Custom LLM"
+      ]
+    },
+    "development_nodes": {
+      "description": "Code Development Nodes",
+      "types": [
+        "CodeGenerator",
+        "TestWriter",
+        "DocumentationBuilder",
+        "CodeReviewer"
+      ]
+    },
+    "utility_nodes": {
+      "description": "Utility and Helper Nodes",
+      "types": [
+        "FileSystem",
+        "APIConnector",
+        "DataTransformer",
+        "TemplateEngine"
+      ]
+    },
+    "integration_nodes": {
+      "description": "External Integration Nodes",
+      "types": [
+        "GitHubActions",
+        "VSCodeExtension",
+        "IDEPlugin",
+        "CICD"
+      ]
+    }
+  },
+  "node_interfaces": {
+    "input_types": [
+      "string",
+      "number",
+      "boolean",
+      "array",
+      "object",
+      "file"
+    ],
+    "output_types": [
+      "code",
+      "test",
+      "documentation",
+      "analysis"
+    ]
+  },
+  "development_capabilities": {
+    "code_generation": {
+      "languages": [
+        "JavaScript",
+        "TypeScript",
+        "Python"
+      ],
+      "frameworks": [
+        "React",
+        "Node.js",
+        "Express"
+      ]
+    },
+    "testing": {
+      "frameworks": [
+        "Jest",
+        "Mocha",
+        "Pytest"
+      ],
+      "types": [
+        "unit",
+        "integration",
+        "e2e"
+      ]
+    }
+  }
+}

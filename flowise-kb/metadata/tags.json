@@ -1,0 +1,72 @@
+{
+    "version": "1.0",
+    "lastUpdated": "2025-02-15",
+    "tags": {
+        "installation": {
+            "description": "Installation and setup related content",
+            "files": ["setup/installation.md", "deployment.md"],
+            "priority": "high"
+        },
+        "security": {
+            "description": "Security and authentication content",
+            "files": ["guides/security.md", "authentication.md"],
+            "priority": "high"
+        },
+        "integration": {
+            "description": "Integration with other tools and systems",
+            "files": [
+                "integrations/windsurf-integration.md",
+                "ai-interfaces/api-reference.md"
+            ],
+            "priority": "high"
+        },
+        "examples": {
+            "description": "Example implementations and use cases",
+            "files": [
+                "examples/workflows.md",
+                "examples/specific-examples.md"
+            ],
+            "priority": "medium"
+        },
+        "architecture": {
+            "description": "System architecture and design",
+            "files": [
+                "architecture.md",
+                "concepts/flowise-core.md"
+            ],
+            "priority": "medium"
+        },
+        "troubleshooting": {
+            "description": "Troubleshooting and maintenance",
+            "files": [
+                "guides/troubleshooting.md"
+            ],
+            "priority": "medium"
+        },
+        "development": {
+            "description": "Development patterns and guidelines",
+            "files": [
+                "ai-interfaces/development-patterns.md"
+            ],
+            "priority": "medium"
+        },
+        "templates": {
+            "description": "Reusable flow templates",
+            "files": [
+                "templates/flows/code-generation.json",
+                "templates/flows/code-review.json"
+            ],
+            "priority": "low"
+        }
+    },
+    "relationships": {
+        "installation": ["security", "integration"],
+        "security": ["integration", "architecture"],
+        "integration": ["examples", "templates"],
+        "examples": ["templates", "development"],
+        "architecture": ["development", "security"],
+        "troubleshooting": ["security", "integration"],
+        "development": ["examples", "architecture"],
+        "templates": ["examples", "development"]
+    }
+}
