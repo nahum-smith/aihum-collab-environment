@@ -1,3 +1,15 @@
+---
+title: "workflows"
+description: "Documentation for workflows"
+category: "examples"
+tags: ["examples", "documentation"]
+machineReadable: true
+version: "1.0"
+lastUpdated: "2025-02-15"
+searchPriority: "high"
+relatedDocs: []
+---
+
 # Windsurf + Flowise Workflow Examples
 
 ## 1. Code Generation Workflow

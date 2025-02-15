@@ -1,0 +1,72 @@
+{
+    "version": "1.0",
+    "lastUpdated": "2025-02-15",
+    "repository": {
+        "name": "kb-nahum-jeff-shared",
+        "type": "shared-knowledge-base",
+        "description": "Shared knowledge base for Flowise integration documentation",
+        "maintainers": [
+            "nahum",
+            "jeff"
+        ],
+        "access": {
+            "type": "shared",
+            "permissions": [
+                "read",
+                "write",
+                "maintain"
+            ]
+        },
+        "structure": {
+            "baseUrl": "https://github.com/your-org/kb-nahum-jeff-shared",
+            "mainBranch": "main",
+            "documentationRoot": "/",
+            "metadataLocation": "/metadata"
+        },
+        "synchronization": {
+            "method": "git",
+            "frequency": "real-time",
+            "conflict_resolution": "manual"
+        }
+    },
+    "integrations": {
+        "flowise": {
+            "type": "primary",
+            "version": "1.0.0",
+            "docs_path": "/integrations/flowise"
+        },
+        "windsurf": {
+            "type": "primary",
+            "version": "0.7.0",
+            "docs_path": "/integrations/windsurf"
+        }
+    },
+    "collaboration": {
+        "workflow": {
+            "branchStrategy": "feature-branches",
+            "reviewProcess": "required",
+            "mergeStrategy": "squash"
+        },
+        "documentation": {
+            "format": "markdown",
+            "style": "gfm",
+            "linting": true
+        },
+        "metadata": {
+            "schema": "json",
+            "validation": "required",
+            "autoUpdate": true
+        }
+    },
+    "search": {
+        "engine": "repository-native",
+        "indexing": {
+            "frequency": "on-commit",
+            "scope": [
+                "*.md",
+                "*.json",
+                "examples/*"
+            ]
+        }
+    }
+}

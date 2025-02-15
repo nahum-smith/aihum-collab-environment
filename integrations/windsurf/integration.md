@@ -1,3 +1,15 @@
+---
+title: "integration"
+description: "Documentation for integration"
+category: "windsurf"
+tags: ["windsurf", "documentation"]
+machineReadable: true
+version: "1.0"
+lastUpdated: "2025-02-15"
+searchPriority: "high"
+relatedDocs: []
+---
+
 # Windsurf-Flowise Integration Guide
 
 ## How Windsurf Uses Flowise

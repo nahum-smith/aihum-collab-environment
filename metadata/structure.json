@@ -2,7 +2,10 @@
     "version": "1.0",
     "lastUpdated": "2025-02-15",
     "structure": {
-        "root": {
+        "repository": "kb-nahum-jeff-shared",
+        "organization": "git-based",
+        "repository": "kb-nahum-jeff-shared",
+    "root": {
             "type": "directory",
             "description": "Root of the Flowise Knowledge Base",
             "children": [

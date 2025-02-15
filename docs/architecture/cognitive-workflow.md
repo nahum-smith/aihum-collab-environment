@@ -1,3 +1,15 @@
+---
+title: "cognitive workflow"
+description: "Documentation for cognitive workflow"
+category: "architecture"
+tags: ["architecture", "documentation"]
+machineReadable: true
+version: "1.0"
+lastUpdated: "2025-02-15"
+searchPriority: "high"
+relatedDocs: []
+---
+
 # Cognitive Workflow: Creating the Flowise Knowledge Base
 
 ## 1. Initial Analysis Phase
@@ -233,3 +245,60 @@ graph LR
 2. Prioritize maintainability
 3. Enable easy discovery
 4. Support future growth
+
+## 4. Git Repository and Machine Readability Optimization
+
+### Repository Structure Enhancement
+```mermaid
+graph TD
+    A[Knowledge Base] --> B[Documentation]
+    A --> C[Integrations]
+    A --> D[Metadata]
+    A --> E[Templates]
+    B --> F[API]
+    B --> G[Architecture]
+    B --> H[Guides]
+    B --> I[Security]
+    C --> J[Flowise]
+    C --> K[Windsurf]
+    D --> L[machine-readable.json]
+    D --> M[structure.json]
+```
+
+### Machine Readability Features
+1. **Metadata Layer**
+   - Content mapping
+   - Schema definitions
+   - Search indexing priorities
+   - Document relationships
+
+2. **Document Structure**
+   - YAML frontmatter in all docs
+   - Consistent metadata fields
+   - Clear categorization
+   - Search optimization
+
+3. **Git Best Practices**
+   - Clear directory structure
+   - Standard Git files (.gitignore, CONTRIBUTING.md)
+   - PR and Issue templates
+   - GitHub Actions workflows
+
+### Implementation Process
+1. **Repository Reorganization**
+   - Consolidated documentation under `/docs`
+   - Unified integration directories
+   - Separated maintenance scripts
+   - Added Git essentials
+
+2. **Machine Readability Enhancement**
+   - Created machine-readable.json schema
+   - Added YAML frontmatter to all docs
+   - Defined search priorities
+   - Established document relationships
+
+3. **Quality Assurance**
+   - Automated frontmatter validation
+   - Documentation structure checks
+   - Link validation
+   - Markdown formatting consistency

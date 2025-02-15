@@ -1,3 +1,15 @@
+---
+title: "specific examples"
+description: "Documentation for specific examples"
+category: "examples"
+tags: ["examples", "documentation"]
+machineReadable: true
+version: "1.0"
+lastUpdated: "2025-02-15"
+searchPriority: "high"
+relatedDocs: []
+---
+
 # Specific Implementation Examples
 
 ## 1. Full-Stack Feature Implementation

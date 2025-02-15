@@ -1,4 +1,6 @@
-# Flowise Knowledge Base [Main Entry Point]
+# Flowise Knowledge Base
+
+> 📖 To understand the design philosophy and organization of this knowledge base, start with our [Cognitive Workflow](docs/architecture/cognitive-workflow.md) document. [Main Entry Point]
 
 > Welcome to the Flowise Knowledge Base! This document serves as the main entry point for both human readers and machine processing. For programmatic access, see `metadata/structure.json`.
 

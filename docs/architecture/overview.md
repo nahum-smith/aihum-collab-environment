@@ -1,3 +1,15 @@
+---
+title: "overview"
+description: "Documentation for overview"
+category: "architecture"
+tags: ["architecture", "documentation"]
+machineReadable: true
+version: "1.0"
+lastUpdated: "2025-02-15"
+searchPriority: "high"
+relatedDocs: []
+---
+
 # Flowise Core Architecture
 
 ## System Components

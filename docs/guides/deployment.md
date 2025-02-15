@@ -1,3 +1,15 @@
+---
+title: "deployment"
+description: "Documentation for deployment"
+category: "guides"
+tags: ["guides", "documentation"]
+machineReadable: true
+version: "1.0"
+lastUpdated: "2025-02-15"
+searchPriority: "high"
+relatedDocs: []
+---
+
 # Flowise Deployment Options
 
 ## Installation Methods

@@ -1,3 +1,15 @@
+---
+title: "security"
+description: "Documentation for security"
+category: "guides"
+tags: ["guides", "documentation"]
+machineReadable: true
+version: "1.0"
+lastUpdated: "2025-02-15"
+searchPriority: "high"
+relatedDocs: []
+---
+
 # Security Guide
 
 ## Security Architecture

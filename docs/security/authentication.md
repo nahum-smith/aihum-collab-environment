@@ -1,3 +1,15 @@
+---
+title: "authentication"
+description: "Documentation for authentication"
+category: "security"
+tags: ["security", "documentation"]
+machineReadable: true
+version: "1.0"
+lastUpdated: "2025-02-15"
+searchPriority: "high"
+relatedDocs: []
+---
+
 # Flowise Authentication
 
 ## Security Architecture

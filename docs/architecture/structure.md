@@ -1,3 +1,15 @@
+---
+title: "structure"
+description: "Documentation for structure"
+category: "architecture"
+tags: ["architecture", "documentation"]
+machineReadable: true
+version: "1.0"
+lastUpdated: "2025-02-15"
+searchPriority: "high"
+relatedDocs: []
+---
+
 # Knowledge Base Structure
 
 ```mermaid
