@@ -1,0 +1,122 @@
+{
+    "version": "1.0",
+    "lastUpdated": "2025-02-15",
+    "machineReadable": {
+        "contentMapping": {
+            "docs": {
+                "ai-interfaces": {
+                    "path": "/docs/ai-interfaces",
+                    "contentType": "markdown",
+                    "schema": "api-documentation",
+                    "files": {
+                        "development-patterns.md": {
+                            "type": "guide",
+                            "machineFormat": "yaml-frontmatter",
+                            "searchPriority": "high"
+                        },
+                        "query-patterns.md": {
+                            "type": "reference",
+                            "machineFormat": "yaml-frontmatter",
+                            "searchPriority": "high"
+                        }
+                    }
+                },
+                "api": {
+                    "path": "/docs/api",
+                    "contentType": "markdown",
+                    "schema": "api-specification",
+                    "files": {
+                        "nodes-reference.md": {
+                            "type": "reference",
+                            "machineFormat": "yaml-frontmatter",
+                            "searchPriority": "high"
+                        }
+                    }
+                }
+            },
+            "integrations": {
+                "path": "/integrations",
+                "contentType": "markdown",
+                "schema": "integration-spec",
+                "subDirectories": {
+                    "flowise": {
+                        "type": "integration",
+                        "machineFormat": "yaml-frontmatter",
+                        "searchPriority": "high"
+                    },
+                    "windsurf": {
+                        "type": "integration",
+                        "machineFormat": "yaml-frontmatter",
+                        "searchPriority": "high"
+                    }
+                }
+            }
+        },
+        "schemas": {
+            "api-documentation": {
+                "required": ["title", "description", "version", "endpoints"],
+                "properties": {
+                    "title": "string",
+                    "description": "string",
+                    "version": "string",
+                    "endpoints": "array"
+                }
+            },
+            "integration-spec": {
+                "required": ["name", "version", "dependencies", "configuration"],
+                "properties": {
+                    "name": "string",
+                    "version": "string",
+                    "dependencies": "array",
+                    "configuration": "object"
+                }
+            }
+        },
+        "keyDocuments": {
+        "foundation": "/docs/architecture/cognitive-workflow.md",
+        "architecture": "/docs/architecture/overview.md",
+        "security": "/docs/security/authentication.md"
+    },
+    "searchIndexing": {
+            "priority": {
+                "high": [
+                    "/docs/api/*",
+                    "/docs/ai-interfaces/*",
+                    "/integrations/*/*"
+                ],
+                "medium": [
+                    "/docs/guides/*",
+                    "/docs/examples/*"
+                ],
+                "low": [
+                    "/templates/*",
+                    "/metadata/*"
+                ]
+            }
+        },
+        "relationships": {
+            "type": "graph",
+            "nodes": {
+                "api": ["integrations", "examples"],
+                "guides": ["examples", "api"],
+                "security": ["api", "integrations"],
+                "architecture": ["concepts", "integrations"]
+            }
+        },
+        "frontMatterTemplate": {
+            "required": [
+                "title",
+                "description",
+                "category",
+                "tags",
+                "machineReadable"
+            ],
+            "optional": [
+                "version",
+                "authors",
+                "lastUpdated",
+                "relatedDocs"
+            ]
+        }
+    }
+}

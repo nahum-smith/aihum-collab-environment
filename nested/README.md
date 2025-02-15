@@ -1,8 +1,8 @@
-# Knowledge Base Network: A New Era of Collaborative Intelligence
+# Flowise Knowledge Base
 
-A revolutionary documentation system that transforms technical collaboration at two levels:
-1. **Individual**: Maximizing the collaborative potential between a single human and their AI agent
-2. **Network**: Enabling teams to share and build upon each other's human-AI collaborative experiences
+> 📖 To understand the design philosophy and organization of this knowledge base, start with our [Cognitive Workflow](docs/architecture/cognitive-workflow.md) document. [Main Entry Point]
+
+> Welcome to the Flowise Knowledge Base! This document serves as the main entry point for both human readers and machine processing. For programmatic access, see `metadata/structure.json`.
 
 ## Overview
 

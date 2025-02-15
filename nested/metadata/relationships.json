@@ -1,0 +1,31 @@
+{
+  "version": "1.0",
+  "relationships": {
+    "concepts": {
+      "core": {
+        "depends_on": [],
+        "related_to": ["architecture", "workflows"],
+        "implements": ["code-generation", "code-analysis"]
+      },
+      "architecture": {
+        "depends_on": ["core"],
+        "related_to": ["implementations"],
+        "implements": ["node-system", "flow-engine"]
+      }
+    },
+    "implementations": {
+      "code-generation": {
+        "uses": ["templates", "prompts"],
+        "produces": ["components", "tests", "documentation"],
+        "requires": ["llm-integration"]
+      }
+    },
+    "templates": {
+      "flows": {
+        "based_on": ["concepts"],
+        "used_by": ["implementations"],
+        "format": "json"
+      }
+    }
+  }
+}

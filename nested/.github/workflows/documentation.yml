@@ -1,0 +1,25 @@
+name: Documentation
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+    
+    - name: Validate Markdown
+      uses: docker://pandoc/core:2.9
+      with:
+        args: >-
+          find . -name "*.md" -exec pandoc --fail-if-warnings {} \;
+    
+    - name: Check Links
+      uses: gaurav-nelson/github-action-markdown-link-check@v1
+      with:
+        use-quiet-mode: 'yes'
+        config-file: '.github/markdown-link-check.json'
