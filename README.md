@@ -136,6 +136,32 @@ Pre-built templates for common tasks:
 - Technical documentation
 - Chain of thought reasoning
 
+## Project Documentation
+
+This project is designed to facilitate the aggregation and organization of research and development efforts related to AI platforms. It includes a comprehensive knowledge base for storing ideas, notes, and references.
+
+### Key Features
+
+- **Knowledge Base**: A structured repository for storing and accessing AI platform-related information.
+- **CLI Tools**: Includes scripts like `inject_note.sh` for efficiently managing and updating documentation.
+
+### Using the inject_note.sh Script
+
+The `inject_note.sh` script is a command-line tool that allows you to inject notes into specified sections of the `index.md` file within the knowledge base.
+
+#### Usage
+
+Run the script with the following command:
+
+```bash
+./scripts/inject_note.sh "Your note here" "Section Name"
+```
+
+- **Your note here**: The note you wish to add.
+- **Section Name**: The section in the `index.md` where the note should be added (e.g., "Ideas", "Notes").
+
+Ensure that the script has executable permissions and that you have the necessary rights to modify the `index.md` file.
+
 ## Network Effects
 
 This system creates powerful network effects through:
