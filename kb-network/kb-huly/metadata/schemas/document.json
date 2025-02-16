@@ -1,0 +1,69 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "title": "Huly Documentation Schema",
+    "type": "object",
+    "required": ["title", "description", "category", "tags", "machineReadable", "version", "lastUpdated"],
+    "properties": {
+        "title": {
+            "type": "string",
+            "description": "Document title"
+        },
+        "description": {
+            "type": "string",
+            "description": "Brief document description"
+        },
+        "category": {
+            "type": "string",
+            "enum": [
+                "platform",
+                "architecture",
+                "features",
+                "integrations",
+                "security",
+                "vision",
+                "guides",
+                "api"
+            ]
+        },
+        "tags": {
+            "type": "array",
+            "items": {
+                "type": "string"
+            },
+            "minItems": 1
+        },
+        "machineReadable": {
+            "type": "boolean",
+            "default": true
+        },
+        "version": {
+            "type": "string",
+            "pattern": "^\\d+\\.\\d+(\\.\\d+)?$"
+        },
+        "lastUpdated": {
+            "type": "string",
+            "format": "date"
+        },
+        "searchPriority": {
+            "type": "string",
+            "enum": ["low", "medium", "high"]
+        },
+        "relatedDocs": {
+            "type": "array",
+            "items": {
+                "type": "string",
+                "pattern": "^docs/.+\\.md$"
+            }
+        },
+        "status": {
+            "type": "string",
+            "enum": ["draft", "review", "published"]
+        },
+        "contributors": {
+            "type": "array",
+            "items": {
+                "type": "string"
+            }
+        }
+    }
+}

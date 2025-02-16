@@ -1,0 +1,121 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "title": "Huly Documentation Validation Rules",
+    "type": "object",
+    "properties": {
+        "templates": {
+            "type": "object",
+            "properties": {
+                "feature": {
+                    "type": "object",
+                    "required": ["frontmatter", "sections", "diagrams"],
+                    "properties": {
+                        "frontmatter": {
+                            "type": "array",
+                            "items": {
+                                "type": "string",
+                                "enum": [
+                                    "title",
+                                    "description",
+                                    "category",
+                                    "tags",
+                                    "machineReadable",
+                                    "version",
+                                    "lastUpdated"
+                                ]
+                            }
+                        },
+                        "sections": {
+                            "type": "array",
+                            "items": {
+                                "type": "string",
+                                "enum": [
+                                    "Overview",
+                                    "Architecture",
+                                    "Components",
+                                    "Configuration",
+                                    "Usage",
+                                    "Best Practices",
+                                    "Troubleshooting"
+                                ]
+                            }
+                        },
+                        "diagrams": {
+                            "type": "object",
+                            "properties": {
+                                "required": {
+                                    "type": "boolean"
+                                },
+                                "types": {
+                                    "type": "array",
+                                    "items": {
+                                        "type": "string",
+                                        "enum": ["flowchart", "sequence", "class", "state"]
+                                    }
+                                }
+                            }
+                        }
+                    }
+                },
+                "api": {
+                    "type": "object",
+                    "required": ["frontmatter", "sections", "examples"],
+                    "properties": {
+                        "frontmatter": {
+                            "type": "array",
+                            "items": {
+                                "type": "string"
+                            }
+                        },
+                        "sections": {
+                            "type": "array",
+                            "items": {
+                                "type": "string"
+                            }
+                        },
+                        "examples": {
+                            "type": "object",
+                            "properties": {
+                                "required": {
+                                    "type": "boolean"
+                                },
+                                "formats": {
+                                    "type": "array",
+                                    "items": {
+                                        "type": "string",
+                                        "enum": ["curl", "javascript", "python"]
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "links": {
+            "type": "object",
+            "properties": {
+                "validateExistence": {
+                    "type": "boolean"
+                },
+                "patterns": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    }
+                }
+            }
+        },
+        "versioning": {
+            "type": "object",
+            "properties": {
+                "pattern": {
+                    "type": "string"
+                },
+                "updateRequired": {
+                    "type": "boolean"
+                }
+            }
+        }
+    }
+}

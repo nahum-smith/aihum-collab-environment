@@ -1,0 +1,83 @@
+{
+    "version": "1.0",
+    "lastUpdated": "2025-02-16",
+    "repository": {
+        "name": "kb-huly",
+        "type": "shared-knowledge-base",
+        "description": "Comprehensive knowledge base for Huly platform documentation",
+        "maintainers": [
+            "nahum",
+            "jeff"
+        ],
+        "access": {
+            "type": "shared",
+            "permissions": [
+                "read",
+                "write",
+                "maintain"
+            ]
+        },
+        "structure": {
+            "baseUrl": "https://github.com/your-org/kb-nahum-jeff-shared",
+            "mainBranch": "main",
+            "documentationRoot": "/",
+            "metadataLocation": "/metadata"
+        },
+        "synchronization": {
+            "method": "git",
+            "frequency": "real-time",
+            "conflict_resolution": "manual"
+        }
+    },
+    "integrations": {
+        "huly": {
+            "type": "primary",
+            "version": "1.0.0",
+            "docs_path": "/docs"
+        },
+        "github": {
+            "type": "secondary",
+            "version": "latest",
+            "docs_path": "/integrations/github"
+        }
+    },
+    "collaboration": {
+        "workflow": {
+            "branchStrategy": "feature-branches",
+            "reviewProcess": "required",
+            "mergeStrategy": "squash"
+        },
+        "documentation": {
+            "format": "markdown",
+            "standards": {
+                "frontMatter": "required",
+                "machineReadable": true,
+                "mermaidDiagrams": "supported"
+            }
+        },
+        "metadata": {
+            "schema": "json",
+            "validation": "strict"
+        }
+    },
+    "categories": [
+        "architecture",
+        "deployment",
+        "integration",
+        "security",
+        "features",
+        "blockchain"
+    ],
+    "tags": [
+        "documentation",
+        "setup",
+        "configuration",
+        "api",
+        "workflow",
+        "collaboration",
+        "virtual-office",
+        "project-management",
+        "global-huly",
+        "blockchain"
+    ]
+}
